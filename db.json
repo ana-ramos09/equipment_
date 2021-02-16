@@ -1,0 +1,15 @@
+{
+  "equipments": [
+    {
+      "id": 1,
+      "code": "T1",
+      "type": 1
+    }
+  ],
+  "equipment-types": [
+    {
+      "id": 1,
+      "description": "Truck"
+    }
+  ]
+}
