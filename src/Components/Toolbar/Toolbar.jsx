@@ -7,7 +7,10 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MUIToolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import { useHistory } from "react-router-dom";
 import { Logo } from "../Logo/Logo.jsx";
+
+const drawerWidth = 220;
 
 const useStyles = makeStyles((theme) => ({
 	logo: {
@@ -18,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 		flexGrow: 1,
 		color: "#eceff1",
 		marginLeft: "25px",
+		cursor: "pointer",
 	},
 	userIcon: {
 		color: "#eceff1",
@@ -27,6 +31,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 	userMenuItems: {
 		height: "50px",
+	},
+	appbar: {
+		zIndex: theme.zIndex.drawer + 1,
+		width: "100%",
+	},
+	drawer: {
+		width: drawerWidth,
+		flexShrink: 0,
 	},
 }));
 
@@ -44,12 +56,21 @@ const Toolbar = () => {
 		setUserMenu(null);
 	};
 
+	let history = useHistory();
+	const handleClickHome = () => {
+		history.push("/");
+	};
+
 	return (
-		<AppBar position="fixed">
+		<AppBar position="fixed" className={classes.appbar}>
 			<MUIToolbar>
 				<Logo className={classes.logo}></Logo>
-				<Typography variant="h5" className={classes.title}>
-					Equipments
+				<Typography
+					variant="h5"
+					className={classes.title}
+					onClick={handleClickHome}
+				>
+					Equipment
 				</Typography>
 				<IconButton
 					aria-label="account of current user"
