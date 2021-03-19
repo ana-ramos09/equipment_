@@ -3,10 +3,21 @@ html {
 }
 
 body {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
   background: rgb(41, 40, 40);
   height: 100%;
   color: whitesmoke;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #5a2e45;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: #361928;
+}
+::-webkit-scrollbar-thumb {
+  background: #6d5959;
 }
